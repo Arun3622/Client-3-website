@@ -1,0 +1,336 @@
+export const navigation = [
+  { label: "How It Works", href: "#our-process" },
+  { label: "Coverage", href: "#inspection-areas" },
+  { label: "Sample Report", href: "#sample-report" },
+  { label: "Why Buyers Trust Us", href: "#trust" },
+  { label: "Contact", href: "#contact" }
+];
+
+export const heroHighlights = [
+  {
+    title: "Independent report",
+    text: "Clear findings for the buyer, without pressure from the seller or showroom."
+  },
+  {
+    title: "Photo-backed evidence",
+    text: "Important issues are supported with visuals so the report is easy to trust."
+  },
+  {
+    title: "Same-day clarity",
+    text: "Move forward, negotiate, or walk away while the deal is still in your hands."
+  }
+];
+
+export const confidenceStats = [
+  "84-point structured checklist",
+  "11 inspection sections",
+  "Photo and VIN evidence",
+  "Decision-ready digital report"
+];
+
+export const trustPillars = [
+  {
+    title: "Unbiased inspection",
+    text: "The report is built for the buyer, with clear grading and no sales language."
+  },
+  {
+    title: "Evidence that explains the issue",
+    text: "Photos, notes, and condition markers show what matters before you pay."
+  },
+  {
+    title: "Field inspectors who know cars",
+    text: "Experienced inspectors follow a structured process instead of a quick walkaround."
+  },
+  {
+    title: "Fast delivery for real decisions",
+    text: "You get the summary quickly enough to negotiate, shortlist, or reject the vehicle."
+  }
+];
+
+export const processSteps = [
+  {
+    title: "Share the vehicle details",
+    text: "Send the listing, location, and preferred slot so the team can prepare for the visit."
+  },
+  {
+    title: "Inspector reaches the car",
+    text: "A trained inspector checks the vehicle on-site using the full reporting checklist."
+  },
+  {
+    title: "Condition is documented",
+    text: "Panels, tyres, cabin, engine bay, electrical systems, and supporting evidence are recorded."
+  },
+  {
+    title: "You receive the final report",
+    text: "The result is delivered in a format that is easy to scan, understand, and act on."
+  }
+];
+
+export const inspectionSections = [
+  {
+    number: "01",
+    title: "Buyer Details",
+    type: "Booking info",
+    description: "The basic details needed to schedule the inspection and deliver the report.",
+    items: ["Buyer Name", "Mobile Number", "Email ID", "City"]
+  },
+  {
+    number: "02",
+    title: "Vehicle Details",
+    type: "Vehicle identity",
+    description: "Core car information is captured before the technical checks begin.",
+    items: [
+      "Car Brand",
+      "Model",
+      "Variant",
+      "Fuel Type",
+      "Transmission",
+      "Color",
+      "VIN Number",
+      "Odometer Reading"
+    ]
+  },
+  {
+    number: "03",
+    title: "Exterior Inspection",
+    type: "Condition check",
+    description: "Panels, paint, lights, alignment, trims, mirrors, and visible impact areas.",
+    items: [
+      "Front Bumper",
+      "Front Grill",
+      "Bonnet Paint",
+      "Bonnet Alignment",
+      "Left Headlight",
+      "Right Headlight",
+      "DRL Lights",
+      "Fog Lamps",
+      "Front Parking Sensors",
+      "Left Fender",
+      "Left Front Door",
+      "Left Rear Door",
+      "Left Mirror",
+      "Right Fender",
+      "Right Front Door",
+      "Right Rear Door",
+      "Right Mirror",
+      "Rear Bumper",
+      "Boot Lid",
+      "Rear Camera",
+      "Rear Parking Sensors",
+      "Tail Lights",
+      "Roof Paint",
+      "Roof Rails",
+      "Sunroof (If Available)"
+    ],
+    options: ["OK", "Minor Issue", "Major Issue"]
+  },
+  {
+    number: "04",
+    title: "Glass Check",
+    type: "Condition check",
+    description: "Windshields and side glass are checked for cracks, chips, and visibility issues.",
+    items: ["Front Windshield", "Rear Windshield", "Left Glass", "Right Glass"],
+    options: ["OK", "Minor Issue", "Major Issue"]
+  },
+  {
+    number: "05",
+    title: "Tyre and Wheel Check",
+    type: "Condition check",
+    description: "Tyre condition, spare readiness, tread depth, and manufacturing date are reviewed.",
+    items: [
+      "Front Left Tyre",
+      "Front Right Tyre",
+      "Rear Left Tyre",
+      "Rear Right Tyre",
+      "Spare Wheel",
+      "Tyre Manufacturing Date"
+    ],
+    options: ["OK", "Minor Issue", "Major Issue"]
+  },
+  {
+    number: "06",
+    title: "Interior Inspection",
+    type: "Condition check",
+    description: "Comfort, cabin wear, controls, infotainment, AC, and power features are verified.",
+    items: [
+      "Seat Condition",
+      "Seat Belts",
+      "Dashboard Condition",
+      "Steering Wheel",
+      "Steering Controls",
+      "Infotainment System",
+      "Speakers",
+      "AC Cooling",
+      "Cabin Lights",
+      "Power Windows",
+      "Central Locking",
+      "Boot Space"
+    ],
+    options: ["OK", "Minor Issue", "Major Issue"]
+  },
+  {
+    number: "07",
+    title: "Engine Bay",
+    type: "Mechanical review",
+    description: "Fluids, battery, wiring, and engine behavior are checked for obvious risks.",
+    items: [
+      "Engine Oil Level",
+      "Coolant Level",
+      "Brake Fluid",
+      "Battery Condition",
+      "Engine Wiring",
+      "Engine Noise"
+    ],
+    options: ["OK", "Minor Issue", "Major Issue"]
+  },
+  {
+    number: "08",
+    title: "Electrical System",
+    type: "Functional check",
+    description: "Lights, horn, wipers, and other essential electrical functions are tested.",
+    items: [
+      "Headlights",
+      "Indicators",
+      "Fog Lamps",
+      "Brake Lights",
+      "Reverse Lights",
+      "Hazard Lights",
+      "Horn",
+      "Wipers"
+    ],
+    options: ["OK", "Minor Issue", "Major Issue"]
+  },
+  {
+    number: "09",
+    title: "Photo Evidence",
+    type: "Report evidence",
+    description: "Key photos are attached to support the findings and help remote buyers review them.",
+    items: [
+      "Exterior Photos",
+      "Interior Photos",
+      "Engine Bay Photos",
+      "Odometer Photo",
+      "VIN Plate Photo"
+    ]
+  },
+  {
+    number: "10",
+    title: "Final Result",
+    type: "Condition rating",
+    description: "A buyer-friendly condition summary and remarks section closes the report.",
+    items: ["Overall Car Condition", "Remarks / Notes"],
+    options: ["Excellent", "Good", "Minor Issues", "Major Issues"]
+  },
+  {
+    number: "11",
+    title: "Inspector Details",
+    type: "Report closure",
+    description: "Inspector identity and inspection date are recorded for accountability.",
+    items: ["Inspector Name", "Inspection Date", "Inspector Sign-off"]
+  }
+];
+
+export const reportRows = [
+  { label: "Buyer Details", score: "4/4", status: "OK" },
+  { label: "Vehicle Details", score: "8/8", status: "OK" },
+  { label: "Exterior Inspection", score: "21/25", status: "Minor Issue" },
+  { label: "Glass Check", score: "4/4", status: "OK" },
+  { label: "Tyre and Wheel Check", score: "5/6", status: "Minor Issue" },
+  { label: "Interior Inspection", score: "11/12", status: "Minor Issue" },
+  { label: "Engine Bay", score: "6/6", status: "OK" },
+  { label: "Electrical System", score: "8/8", status: "OK" },
+  { label: "Photo Evidence", score: "5/5", status: "OK" },
+  { label: "Final Result", score: "Good", status: "Good" },
+  { label: "Inspector Details", score: "3/3", status: "OK" }
+];
+
+export const evidenceItems = [
+  { label: "Front bumper scratch", status: "Minor Issue" },
+  { label: "Right rear door paint fade", status: "Minor Issue" },
+  { label: "Rear bumper dent", status: "Major Issue" },
+  { label: "Tyre tread wear", status: "Minor Issue" }
+];
+
+export const reportMeta = [
+  { label: "Report ID", value: "CM-24-05-27001" },
+  { label: "Model", value: "Hyundai Creta SX(O)" },
+  { label: "Fuel and Gearbox", value: "Diesel Automatic" },
+  { label: "Odometer", value: "58,730 km" },
+  { label: "VIN Number", value: "MAPB18BLM123456" },
+  { label: "Inspection City", value: "Pune" }
+];
+
+export const sampleVehicle = {
+  name: "Hyundai Creta",
+  subtitle: "2020 SX(O) · Diesel · Automatic"
+};
+
+export const reportRemark =
+  "Overall the vehicle is in good condition. Cosmetic wear is visible on select panels and one tyre shows minor tread loss, but the mechanical systems appear healthy and ready for a serious buyer review.";
+
+export const professionalPoints = [
+  {
+    title: "Certified and experienced",
+    text: "Inspectors know where hidden repair history and wear patterns usually show up first."
+  },
+  {
+    title: "Same-day digital delivery",
+    text: "Reports are shared quickly so your buying decision does not lose momentum."
+  },
+  {
+    title: "Remote buyer friendly",
+    text: "Photo evidence and clear remarks help even when you are not standing next to the car."
+  },
+  {
+    title: "Transparent communication",
+    text: "The language stays practical, so the report reads like guidance instead of marketing."
+  }
+];
+
+export const testimonial = {
+  quote:
+    "\"The report was detailed, easy to understand, and useful during negotiation. We knew what mattered before making payment.\"",
+  name: "Rohit Mehta",
+  location: "Pune, Maharashtra"
+};
+
+export const ctaChecklist = [
+  "Pre-purchase and pre-delivery inspections",
+  "84-point inspection flow",
+  "Photo and VIN evidence",
+  "Condition grading with remarks",
+  "Digital report shared the same day"
+];
+
+export const contactItems = [
+  { label: "Phone", value: "+91 98765 43210", href: "tel:+919876543210", icon: "phone" },
+  {
+    label: "Email",
+    value: "hello@checkmatepdi.com",
+    href: "mailto:hello@checkmatepdi.com",
+    icon: "mail"
+  },
+  { label: "Service area", value: "Pune and nearby locations", icon: "city" },
+  { label: "Availability", value: "Same-day slots available on request", icon: "clock" }
+];
+
+export const serviceNotes = [
+  "Ideal before token payment or final handover.",
+  "Useful for both on-site buyers and remote buyers.",
+  "Delivered in a simple, decision-ready digital format."
+];
+
+export const contactActions = [
+  {
+    label: "Request a callback",
+    href: "mailto:hello@checkmatepdi.com",
+    icon: "mail",
+    variant: "solid"
+  },
+  {
+    label: "WhatsApp the team",
+    href: "https://wa.me/919876543210",
+    icon: "chat",
+    variant: "outline"
+  }
+];
