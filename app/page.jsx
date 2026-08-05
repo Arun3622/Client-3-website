@@ -466,17 +466,6 @@ export default function HomePage() {
           <p>© {new Date().getFullYear()} CheckMate PDI Exxpert. All rights reserved.</p>
         </div>
       </footer>
-      {/* Sticky Mobile CTA */}
-      <a
-        href="https://wa.me/917039935536?text=Hi%2C%20I%20want%20to%20book%20a%20PDI%20inspection%20for%20my%20car."
-        target="_blank"
-        rel="noopener noreferrer"
-        className="sticky-mobile-cta"
-        aria-label="Book your car PDI now"
-      >
-        <Icon name="chat" size={20} />
-        <span>Book Your Car PDI Now</span>
-      </a>
     </main>
   );
 }
