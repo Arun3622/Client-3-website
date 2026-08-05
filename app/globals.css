@@ -2296,4 +2296,70 @@ img, .report-car, .inspector-image { max-width: 100%; }
   transform: scale(1.05);
 }
 
+/* ============================================================
+   STICKY MOBILE CTA BANNER
+   ============================================================ */
+.sticky-mobile-cta {
+  display: none;
+}
 
+@media (max-width: 720px) {
+  .sticky-mobile-cta {
+    position: fixed;
+    bottom: 20px;
+    right: 16px;
+    left: 16px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 24px;
+    border-radius: 18px;
+    background: linear-gradient(145deg, var(--green-700), var(--color-primary));
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    box-shadow:
+      0 8px 32px rgba(26, 61, 32, 0.35),
+      0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    animation: ctaPulse 2.8s ease-in-out infinite;
+  }
+
+  .sticky-mobile-cta:active {
+    transform: scale(0.97);
+    box-shadow:
+      0 4px 16px rgba(26, 61, 32, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+  }
+
+  .sticky-mobile-cta span {
+    white-space: nowrap;
+  }
+
+  .sticky-mobile-cta svg {
+    flex-shrink: 0;
+  }
+
+  @keyframes ctaPulse {
+    0%, 100% {
+      box-shadow:
+        0 8px 32px rgba(26, 61, 32, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+    }
+    50% {
+      box-shadow:
+        0 8px 40px rgba(26, 61, 32, 0.45),
+        0 0 20px rgba(42, 158, 72, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+    }
+  }
+
+  /* Add bottom padding to footer so the sticky CTA doesn't overlap content */
+  .footer-bottom {
+    padding-bottom: 80px;
+  }
+}
