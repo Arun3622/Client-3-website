@@ -129,6 +129,17 @@ const iconMap = {
       <path d="M4 12h16" />
       <path d="M4 17h16" />
     </>
+  ),
+  chevronDown: (
+    <>
+      <path d="m6 9 6 6 6-6" />
+    </>
+  ),
+  location: (
+    <>
+      <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z" />
+      <circle cx="12" cy="10" r="3" />
+    </>
   )
 };
 

@@ -9,6 +9,9 @@ import { StatusPill } from "@/components/status-pill";
 import { Icon } from "@/components/icon";
 import { ReviewSection } from "@/components/review-section";
 import { Reveal } from "@/components/reveal";
+import { JsonLd, homeJsonLdData } from "@/components/json-ld";
+import { FaqSection } from "@/components/faq-section";
+import { CorridorLinks } from "@/components/corridor-links";
 import {
   confidenceStats,
   contactActions,
@@ -56,20 +59,21 @@ function ScoreRing({ label, score, suffix = "%" }) {
 export default function HomePage() {
   return (
     <main className="page-shell" id="top">
+      <JsonLd schemaData={homeJsonLdData} />
       <SiteHeader navigation={navigation} />
 
       {/* ── HERO ── */}
       <section className="hero-section">
         <div className="container hero-grid">
           <div className="hero-copy">
-            <div className="hero-price-pill">Start a PDI Inspection for ₹999</div>
-            <SectionLabel>Trusted car inspection for every buyer</SectionLabel>
-            <h1>Premium Pre-Delivery Inspections for Confident Car Purchases.</h1>
+            <div className="hero-price-pill">Starting at ₹999 • On-Site Inspection</div>
+            <SectionLabel>Independent car inspection for every buyer</SectionLabel>
+            <h1>Know Exactly What You're Buying Before You Pay.</h1>
             <p className="hero-text">
-              Our certified inspectors carry out a complete 350+ point pre-delivery inspection, capturing every major detail with photo-backed evidence and clear, expert findings.
+              Independent, photo-backed car PDI and pre-purchase inspections across Mumbai and Thane. Over 350 checkpoints verified on-site, with your decision-ready report delivered in 15 minutes.
             </p>
-            <p className="hero-text hero-text-extended">
-              Get a polished, decision-ready report within 15 minutes — so you can buy with confidence and avoid unexpected issues after handover.
+            <p className="hero-text hero-text-extended" style={{ fontWeight: 600, color: "var(--green-700)" }}>
+              Serving car buyers across the Mumbai western line and Thane–Kalyan belt — from Churchgate to Virar, and Thane to Kalyan.
             </p>
 
             <div className="hero-badge-grid">
@@ -346,6 +350,12 @@ export default function HomePage() {
           <ReviewSection reviews={verifiedReviews} />
         </div>
       </section>
+
+      {/* ── FAQ SECTION (AI SEARCH OPTIMIZED) ── */}
+      <FaqSection />
+
+      {/* ── CORRIDOR LOCATION LINKS (LOCAL SEO) ── */}
+      <CorridorLinks />
 
       {/* ── CONTACT / CTA ── */}
       <section className="section-space section-space-tight" id="contact">

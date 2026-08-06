@@ -16,9 +16,21 @@ const bodyFont = Inter({
 });
 
 export const metadata = {
-  title: "CheckMate PDI Expert | Premium Car Inspection Reports",
+  metadataBase: new URL("https://checkmatepdi.com"),
+  title: "Car PDI Inspection Thane, Mumbai | Pre-Delivery & Pre-Purchase Checks from ₹999 | CheckMate PDI",
   description:
-    "Independent pre-purchase and pre-delivery car inspection with photo evidence, structured reports, and report delivery within 15 minutes."
+    "Independent car PDI & pre-purchase inspection across Mumbai's western line and Thane–Kalyan belt. 350+ point checklist, photo evidence, report in 15 min. Starting ₹999.",
+  alternates: {
+    canonical: "/"
+  },
+  openGraph: {
+    title: "Car PDI Inspection Thane, Mumbai | Pre-Delivery & Pre-Purchase Checks from ₹999 | CheckMate PDI",
+    description: "Independent car PDI & pre-purchase inspection across Mumbai's western line and Thane–Kalyan belt. 350+ point checklist, photo evidence, report in 15 min. Starting ₹999.",
+    url: "https://checkmatepdi.com",
+    siteName: "CheckMate PDI Exxpert",
+    locale: "en_IN",
+    type: "website"
+  }
 };
 
 export default function RootLayout({ children }) {
