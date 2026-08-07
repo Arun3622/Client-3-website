@@ -1,117 +1,155 @@
-import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { SectionLabel } from "@/components/section-label";
 import { Icon } from "@/components/icon";
-import { JsonLd } from "@/components/json-ld";
-import { FaqSection } from "@/components/faq-section";
-import { CorridorLinks } from "@/components/corridor-links";
-import { navigation } from "@/app/site-data";
+import { navigation, corridorPages, verifiedReviews } from "@/app/site-data";
+import { ReviewSection } from "@/components/review-section";
 
 export const metadata = {
-  title: "Car PDI Inspection Goregaon to Borivali | Malad & Kandivali Car Check | CheckMate PDI",
-  description: "On-site car PDI & pre-purchase inspection in Goregaon, Malad, Kandivali & Borivali. Detailed 350+ point check before you pay token money. Starting at ₹999.",
-  alternates: {
-    canonical: "https://checkmatepdi.com/car-inspection-goregaon-borivali"
-  }
+  title: "Car PDI Inspection Goregaon to Borivali | Pre-Purchase Car Checks | CheckMate PDI",
+  description: "Car PDI and pre-delivery inspection in Goregaon, Malad, Kandivali & Borivali. 350+ point checklist, paint & battery test, report in 15 mins. From ₹999."
 };
 
-const goregaonBorivaliSchema = [
-  {
-    "@context": "https://schema.org",
-    "@type": "AutoRepair",
-    "@id": "https://checkmatepdi.com/car-inspection-goregaon-borivali#organization",
-    "name": "CheckMate PDI Exxpert - Goregaon to Borivali",
-    "url": "https://checkmatepdi.com/car-inspection-goregaon-borivali",
-    "telephone": "+917039935536",
-    "priceRange": "₹999 - ₹2999",
-    "description": "Independent car PDI and pre-purchase inspection from Goregaon to Malad, Kandivali, Borivali and Dahisar. 350+ point checklist with photo evidence.",
-    "areaServed": [
-      { "@type": "City", "name": "Goregaon" },
-      { "@type": "City", "name": "Malad" },
-      { "@type": "City", "name": "Kandivali" },
-      { "@type": "City", "name": "Borivali" },
-      { "@type": "City", "name": "Dahisar" }
-    ]
-  }
-];
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AutomotiveBusiness",
+  "name": "CheckMate PDI Exxpert - Goregaon to Borivali Corridor",
+  "url": "https://checkmatepdi.com/car-inspection-goregaon-borivali",
+  "telephone": "+917039935536",
+  "priceRange": "₹999 - ₹4999",
+  "description": "Independent car PDI & pre-purchase inspection in Goregaon, Malad, Kandivali, Borivali, and Dahisar.",
+  "areaServed": [
+    "Goregaon", "Malad", "Kandivali", "Borivali", "Dahisar"
+  ]
+};
 
 export default function GoregaonBorivaliCorridorPage() {
+  const areas = [
+    "Goregaon East/West", "Malad East/West", "Mindspace Malad",
+    "Kandivali East/West", "Borivali West", "Borivali East", "Dahisar"
+  ];
+
   return (
     <main className="page-shell" id="top">
-      <JsonLd schemaData={goregaonBorivaliSchema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <SiteHeader navigation={navigation} />
 
-      {/* Hero Section */}
-      <section className="hero-section" style={{ padding: "60px 0 40px" }}>
-        <div className="container">
-          <nav style={{ fontSize: "0.9rem", color: "var(--text-soft)", marginBottom: "20px" }}>
-            <Link href="/" style={{ color: "var(--green-700)", textDecoration: "none" }}>Home</Link> &gt; <span>Goregaon to Borivali Car Inspection</span>
-          </nav>
-          <div style={{ maxWidth: "800px" }}>
-            <div className="hero-price-pill" style={{ display: "inline-block", marginBottom: "16px" }}>
-              Starting at ₹999 • On-Site Inspection
-            </div>
-            <SectionLabel>Goregaon – Borivali Corridor</SectionLabel>
-            <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", lineHeight: 1.15, marginTop: "12px" }}>
-              Car PDI & Pre-Purchase Inspections in Goregaon, Malad & Borivali
-            </h1>
-            <p className="hero-text" style={{ fontSize: "1.15rem", marginTop: "16px", lineHeight: 1.6 }}>
-              Buying a car near Link Road or SV Road? Don't risk taking delivery of a damaged or repainted vehicle. Get a 350+ point independent inspection with full photo proof before signing handover documents.
+      {/* Hero */}
+      <section className="hero-section">
+        <div className="container hero-grid">
+          <div className="hero-copy">
+            <div className="hero-price-pill">Goregaon–Borivali Car PDI • Starts at ₹999</div>
+            <SectionLabel>Goregaon to Borivali Belt</SectionLabel>
+            <h1>Car PDI & Used Car Inspection in Goregaon, Malad & Borivali.</h1>
+            <p className="hero-text">
+              Buying a vehicle in Goregaon, Malad, Kandivali, or Borivali? Don't rely solely on showroom promises or dealer claims. Our independent inspectors check 350+ points across paint quality, mechanical safety, electrical systems, and cabin condition.
+            </p>
+            <p className="hero-text hero-text-extended">
+              We inspect cars on-site at dealer stockyards, pre-owned car outlets, and private locations, delivering photo proof in 15 minutes.
             </p>
 
-            <div className="hero-actions" style={{ marginTop: "28px" }}>
-              <a className="button button-solid shimmer-effect" href="https://wa.me/917039935536?text=Hi%2C%20I%20want%20to%20book%20a%20car%20PDI%20inspection%20in%20Goregaon-Borivali." target="_blank" rel="noopener noreferrer">
+            <div className="hero-badge-grid">
+              <div className="hero-badge-card">
+                <Icon className="button-icon" name="check" />
+                350+ checkpoints
+              </div>
+              <div className="hero-badge-card">
+                <Icon className="button-icon" name="rupee" />
+                Starts at ₹999
+              </div>
+            </div>
+
+            <div className="hero-actions">
+              <a className="button button-solid shimmer-effect" href="https://wa.me/917039935536?text=Hi%2C%20I%20want%20to%20book%20a%20PDI%20inspection%20in%20Goregaon-Borivali." target="_blank" rel="noopener noreferrer">
                 <Icon className="button-icon" name="chat" />
                 Book Goregaon–Borivali Inspection
               </a>
+              <a className="button button-outline" href="/">
+                View Main Site
+              </a>
+            </div>
+          </div>
+
+          <div className="hero-showcase" style={{ background: 'var(--surface-card)', padding: '32px', borderRadius: '28px', border: '1px solid var(--color-border)' }}>
+            <h3 style={{ fontSize: '1.4rem', marginBottom: '16px' }}>Areas Covered (Goregaon to Borivali)</h3>
+            <p style={{ color: 'var(--text-body)', lineHeight: '1.6', marginBottom: '24px' }}>
+              Our certified inspectors cover all major stockyards, Link Road auto hubs, and suburban neighborhoods:
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px' }}>
+              {areas.map((area) => (
+                <div key={area} style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'var(--surface-soft)', padding: '10px 14px', borderRadius: '12px', fontSize: '0.92rem', fontWeight: 600 }}>
+                  <Icon name="check" style={{ color: 'var(--green-600)', flexShrink: 0 }} />
+                  <span>{area}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Localized Challenges */}
-      <section style={{ padding: "60px 0", background: "#fff" }}>
+      {/* Corridor Specific Reasons */}
+      <section className="section-space">
         <div className="container">
-          <SectionLabel>Goregaon to Borivali Inspection Focus</SectionLabel>
-          <h2 style={{ fontSize: "2rem", marginBottom: "24px" }}>
-            3 Essential Inspection Areas for Western Suburb Buyers
-          </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
-            <div className="card" style={{ padding: "28px", borderRadius: "20px", background: "var(--surface-light)", border: "1.5px solid var(--color-border)" }}>
-              <h3 style={{ fontSize: "1.2rem", color: "var(--green-700)" }}>1. Odometer Tampering & Heavy Commute Mileage</h3>
-              <p style={{ marginTop: "10px", color: "var(--text-body)", lineHeight: 1.6 }}>
-                Suburban cars frequently accumulate 20,000+ km per year on long commutes. We cross-verify brake pad wear, tyre manufacturing week codes, and ECM diagnostic logs to catch rolled-back odometers.
-              </p>
-            </div>
-            <div className="card" style={{ padding: "28px", borderRadius: "20px", background: "var(--surface-light)", border: "1.5px solid var(--color-border)" }}>
-              <h3 style={{ fontSize: "1.2rem", color: "var(--green-700)" }}>2. Open Yard Weathering & Sun Damage</h3>
-              <p style={{ marginTop: "10px", color: "var(--text-body)", lineHeight: 1.6 }}>
-                Dealer stockyards along Malad Link Road and Dahisar Check Naka sit exposed to extreme sunlight and monsoons. We check for faded clear-coats, brittle rubber seals, and battery drain prior to handover.
-              </p>
-            </div>
-            <div className="card" style={{ padding: "28px", borderRadius: "20px", background: "var(--surface-light)", border: "1.5px solid var(--color-border)" }}>
-              <h3 style={{ fontSize: "1.2rem", color: "var(--green-700)" }}>3. Hidden Bumper & Apron Impact Repair</h3>
-              <p style={{ marginTop: "10px", color: "var(--text-body)", lineHeight: 1.6 }}>
-                Suburban traffic bottlenecks lead to frequent front and rear fender benders. We inspect apron alignment, chassis seam sealer, and headlight housing date stamps for undisclosed crash repairs.
-              </p>
-            </div>
+          <div className="section-heading">
+            <SectionLabel>Why Goregaon–Borivali Buyers Trust CheckMate</SectionLabel>
+            <h2>3 Key Benefits for Suburban Car Buyers</h2>
+          </div>
+          <div className="feature-card-grid">
+            <article className="feature-card">
+              <div className="feature-card-icon"><Icon name="shield" /></div>
+              <h3>Water Logging & Flood Damage Inspection</h3>
+              <p>Low-lying areas around Malad subway and SV Road experience seasonal water accumulation. We perform deep under-dash inspections, checking for dampness, rust, and ECU corrosion.</p>
+            </article>
+            <article className="feature-card">
+              <div className="feature-card-icon"><Icon name="shield" /></div>
+              <h3>Major Showroom Yard Pre-Registration Checks</h3>
+              <p>With massive auto stockyards in Goregaon East and Dahisar, we inspect vehicles right after unloading to catch factory paint blemishes, transport scratches, and glass chips.</p>
+            </article>
+            <article className="feature-card">
+              <div className="feature-card-icon"><Icon name="shield" /></div>
+              <h3>Negotiation Leverage for Used Car Buyers</h3>
+              <p>Evaluating a pre-owned car in Borivali or Kandivali? Our clear, photo-backed defect report gives you objective facts to lower the asking price or request repairs.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      {/* Areas Covered Prose */}
-      <section style={{ padding: "60px 0", background: "var(--surface-subtle)" }}>
-        <div className="container" style={{ maxWidth: "840px" }}>
-          <SectionLabel>Western Suburbs Service Areas</SectionLabel>
-          <h2 style={{ fontSize: "1.8rem" }}>On-Site Inspection Across All Suburbs</h2>
-          <p style={{ marginTop: "16px", fontSize: "1.05rem", lineHeight: 1.7, color: "var(--text-body)" }}>
-            Our certified vehicle inspectors provide fast on-site service across <strong>Goregaon East, Goregaon West, Malad East, Malad West, Mindspace, Chincholi Bunder, Kandivali East, Kandivali West, Lokhandwala Township, Borivali East, Borivali West, and Dahisar</strong>.
-          </p>
+      {/* Reviews */}
+      <section className="section-space">
+        <div className="container">
+          <div className="section-heading">
+            <SectionLabel>Verified Buyer Reviews</SectionLabel>
+            <h2>Real Savings Reported by Local Car Buyers</h2>
+          </div>
+          <ReviewSection reviews={verifiedReviews} />
         </div>
       </section>
 
-      <FaqSection />
-      <CorridorLinks currentSlug="car-inspection-goregaon-borivali" />
+      {/* Corridor Links */}
+      <section className="section-band">
+        <div className="container">
+          <div className="section-heading">
+            <SectionLabel>Explore Other Inspection Corridors</SectionLabel>
+            <h2>Coverage Across Mumbai Western Line & Thane Belt</h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '18px' }}>
+            {corridorPages.filter(c => c.href !== "/car-inspection-goregaon-borivali").map(c => (
+              <a key={c.href} href={c.href} className="feature-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <h4 style={{ fontSize: '1.1rem', color: 'var(--green-700)', marginBottom: '8px' }}>{c.title}</h4>
+                <p style={{ fontSize: '0.9rem', color: 'var(--text-body)', margin: 0 }}>{c.desc}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <footer className="site-footer">
+        <div className="container footer-bottom">
+          <p>© {new Date().getFullYear()} CheckMate PDI Exxpert. All rights reserved.</p>
+        </div>
+      </footer>
     </main>
   );
 }

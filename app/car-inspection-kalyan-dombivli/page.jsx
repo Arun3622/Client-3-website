@@ -1,117 +1,155 @@
-import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { SectionLabel } from "@/components/section-label";
 import { Icon } from "@/components/icon";
-import { JsonLd } from "@/components/json-ld";
-import { FaqSection } from "@/components/faq-section";
-import { CorridorLinks } from "@/components/corridor-links";
-import { navigation } from "@/app/site-data";
+import { navigation, corridorPages, verifiedReviews } from "@/app/site-data";
+import { ReviewSection } from "@/components/review-section";
 
 export const metadata = {
-  title: "Car PDI Inspection Kalyan & Dombivli | Pre-Delivery Check | CheckMate PDI",
-  description: "Independent car PDI & pre-purchase inspection in Kalyan, Dombivli, Diva & Thakurli. Uncover hidden accident damage & waterlogging before buying. Starts ₹999.",
-  alternates: {
-    canonical: "https://checkmatepdi.com/car-inspection-kalyan-dombivli"
-  }
+  title: "Car PDI Inspection Kalyan & Dombivli | Pre-Delivery Car Inspection | CheckMate PDI",
+  description: "Car PDI & pre-purchase inspection in Kalyan, Dombivli, Thakurli & Diva. Certified inspectors check 350+ points before you sign. Starting ₹999."
 };
 
-const kalyanDombivliSchema = [
-  {
-    "@context": "https://schema.org",
-    "@type": "AutoRepair",
-    "@id": "https://checkmatepdi.com/car-inspection-kalyan-dombivli#organization",
-    "name": "CheckMate PDI Exxpert - Kalyan & Dombivli",
-    "url": "https://checkmatepdi.com/car-inspection-kalyan-dombivli",
-    "telephone": "+917039935536",
-    "priceRange": "₹999 - ₹2999",
-    "description": "Independent car PDI and pre-purchase inspection across Kalyan, Dombivli, Diva, Kopar and Thakurli. 350+ point checklist with photo evidence.",
-    "areaServed": [
-      { "@type": "City", "name": "Kalyan" },
-      { "@type": "City", "name": "Dombivli" },
-      { "@type": "City", "name": "Diva" },
-      { "@type": "City", "name": "Thakurli" },
-      { "@type": "City", "name": "Kopar" }
-    ]
-  }
-];
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AutomotiveBusiness",
+  "name": "CheckMate PDI Exxpert - Kalyan & Dombivli Corridor",
+  "url": "https://checkmatepdi.com/car-inspection-kalyan-dombivli",
+  "telephone": "+917039935536",
+  "priceRange": "₹999 - ₹4999",
+  "description": "Certified on-site car PDI and used car inspection in Kalyan, Dombivli, Thakurli, Diva, and Kopar.",
+  "areaServed": [
+    "Kalyan East", "Kalyan West", "Dombivli East", "Dombivli West", "Thakurli", "Diva", "Kopar"
+  ]
+};
 
 export default function KalyanDombivliCorridorPage() {
+  const areas = [
+    "Kalyan West", "Kalyan East", "Dombivli East", "Dombivli West",
+    "Thakurli", "Diva Junction", "Kopar"
+  ];
+
   return (
     <main className="page-shell" id="top">
-      <JsonLd schemaData={kalyanDombivliSchema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <SiteHeader navigation={navigation} />
 
-      {/* Hero Section */}
-      <section className="hero-section" style={{ padding: "60px 0 40px" }}>
-        <div className="container">
-          <nav style={{ fontSize: "0.9rem", color: "var(--text-soft)", marginBottom: "20px" }}>
-            <Link href="/" style={{ color: "var(--green-700)", textDecoration: "none" }}>Home</Link> &gt; <span>Kalyan & Dombivli Car Inspection</span>
-          </nav>
-          <div style={{ maxWidth: "800px" }}>
-            <div className="hero-price-pill" style={{ display: "inline-block", marginBottom: "16px" }}>
-              Starting at ₹999 • On-Site Inspection
-            </div>
-            <SectionLabel>Kalyan – Dombivli Belt</SectionLabel>
-            <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", lineHeight: 1.15, marginTop: "12px" }}>
-              Independent Car PDI & Pre-Purchase Inspection in Kalyan & Dombivli
-            </h1>
-            <p className="hero-text" style={{ fontSize: "1.15rem", marginTop: "16px", lineHeight: 1.6 }}>
-              Taking delivery of a new vehicle or buying a pre-owned car in Kalyan or Dombivli? Avoid costly post-purchase surprises. Our certified inspectors perform a complete 350+ point check on-site and deliver your report within 15 minutes.
+      {/* Hero */}
+      <section className="hero-section">
+        <div className="container hero-grid">
+          <div className="hero-copy">
+            <div className="hero-price-pill">Kalyan–Dombivli Car PDI • Starts at ₹999</div>
+            <SectionLabel>Kalyan to Dombivli Belt</SectionLabel>
+            <h1>Car PDI Inspection in Kalyan, Dombivli & Thakurli.</h1>
+            <p className="hero-text">
+              Purchasing a car in Kalyan, Dombivli, Thakurli, or Diva? Protect your investment with a professional 350+ point pre-delivery inspection before paying the final installment or taking handover.
+            </p>
+            <p className="hero-text hero-text-extended">
+              Our field inspectors travel directly to showroom yards and private seller locations across the Kalyan-Dombivli belt, providing an evidence-backed digital report within 15 minutes.
             </p>
 
-            <div className="hero-actions" style={{ marginTop: "28px" }}>
-              <a className="button button-solid shimmer-effect" href="https://wa.me/917039935536?text=Hi%2C%20I%20want%20to%20book%20a%20car%20PDI%20inspection%20in%20Kalyan-Dombivli." target="_blank" rel="noopener noreferrer">
+            <div className="hero-badge-grid">
+              <div className="hero-badge-card">
+                <Icon className="button-icon" name="check" />
+                350+ checkpoints
+              </div>
+              <div className="hero-badge-card">
+                <Icon className="button-icon" name="rupee" />
+                Starts at ₹999
+              </div>
+            </div>
+
+            <div className="hero-actions">
+              <a className="button button-solid shimmer-effect" href="https://wa.me/917039935536?text=Hi%2C%20I%20want%20to%20book%20a%20PDI%20inspection%20in%20Kalyan-Dombivli." target="_blank" rel="noopener noreferrer">
                 <Icon className="button-icon" name="chat" />
                 Book Kalyan–Dombivli Inspection
               </a>
+              <a className="button button-outline" href="/">
+                View Main Site
+              </a>
+            </div>
+          </div>
+
+          <div className="hero-showcase" style={{ background: 'var(--surface-card)', padding: '32px', borderRadius: '28px', border: '1px solid var(--color-border)' }}>
+            <h3 style={{ fontSize: '1.4rem', marginBottom: '16px' }}>Areas Covered (Kalyan & Dombivli)</h3>
+            <p style={{ color: 'var(--text-body)', lineHeight: '1.6', marginBottom: '24px' }}>
+              We provide prompt, on-demand inspection across dealership stockyards and private seller points:
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px' }}>
+              {areas.map((area) => (
+                <div key={area} style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'var(--surface-soft)', padding: '10px 14px', borderRadius: '12px', fontSize: '0.92rem', fontWeight: 600 }}>
+                  <Icon name="check" style={{ color: 'var(--green-600)', flexShrink: 0 }} />
+                  <span>{area}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Localized Challenges */}
-      <section style={{ padding: "60px 0", background: "#fff" }}>
+      {/* Corridor Specific Reasons */}
+      <section className="section-space">
         <div className="container">
-          <SectionLabel>Kalyan–Dombivli Buyer Priorities</SectionLabel>
-          <h2 style={{ fontSize: "2rem", marginBottom: "24px" }}>
-            3 Critical Checks for Kalyan & Dombivli Car Buyers
-          </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
-            <div className="card" style={{ padding: "28px", borderRadius: "20px", background: "var(--surface-light)", border: "1.5px solid var(--color-border)" }}>
-              <h3 style={{ fontSize: "1.2rem", color: "var(--green-700)" }}>1. Waterlogging & Flood Water Silt</h3>
-              <p style={{ marginTop: "10px", color: "var(--text-body)", lineHeight: 1.6 }}>
-                Monsoon flooding in low-lying pockets of Kalyan and Dombivli can leave fine silt, mold, and hidden wiring corrosion inside car sills and under seats. We inspect floorboard carpet padding and trunk wells thoroughly.
-              </p>
-            </div>
-            <div className="card" style={{ padding: "28px", borderRadius: "20px", background: "var(--surface-light)", border: "1.5px solid var(--color-border)" }}>
-              <h3 style={{ fontSize: "1.2rem", color: "var(--green-700)" }}>2. Accident Repair & Body Filler Metering</h3>
-              <p style={{ marginTop: "10px", color: "var(--text-body)", lineHeight: 1.6 }}>
-                Used car deals in local markets sometimes disguise accident damage under fresh paint. Our digital paint thickness gauges measure paint depth in micrometers to reveal body filler and panel replacements.
-              </p>
-            </div>
-            <div className="card" style={{ padding: "28px", borderRadius: "20px", background: "var(--surface-light)", border: "1.5px solid var(--color-border)" }}>
-              <h3 style={{ fontSize: "1.2rem", color: "var(--green-700)" }}>3. Engine Harness & Rodent Damage</h3>
-              <p style={{ marginTop: "10px", color: "var(--text-body)", lineHeight: 1.6 }}>
-                Open parking in semi-urban yards increases the risk of rodent wire chewing. We inspect engine bay looms, sensor wiring, and fuse boxes for damage or taped-up fixes.
-              </p>
-            </div>
+          <div className="section-heading">
+            <SectionLabel>Why Kalyan–Dombivli Buyers Trust CheckMate</SectionLabel>
+            <h2>3 Key Protections for Central Corridor Buyers</h2>
+          </div>
+          <div className="feature-card-grid">
+            <article className="feature-card">
+              <div className="feature-card-icon"><Icon name="shield" /></div>
+              <h3>Pre-Owned Car Odometer & Condition Audit</h3>
+              <p>Buying a used car in Kalyan or Dombivli? We evaluate engine wear, transmission shifts, suspension bushings, and verify physical wear against odometer readings.</p>
+            </article>
+            <article className="feature-card">
+              <div className="feature-card-icon"><Icon name="shield" /></div>
+              <h3>Underbody & Subframe Damage Check</h3>
+              <p>Suburban road conditions can impact lower chassis components. We perform full underbody inspections checking silencer corrosion, oil pan dents, and steering rack boot condition.</p>
+            </article>
+            <article className="feature-card">
+              <div className="feature-card-icon"><Icon name="shield" /></div>
+              <h3>Fast On-Yard Appointment Booking</h3>
+              <p>Certified inspectors visit Kalyan and Dombivli stockyards at short notice, ensuring your delivery date isn't delayed while protecting you from hidden risks.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      {/* Areas Covered Prose */}
-      <section style={{ padding: "60px 0", background: "var(--surface-subtle)" }}>
-        <div className="container" style={{ maxWidth: "840px" }}>
-          <SectionLabel>Kalyan–Dombivli Area Coverage</SectionLabel>
-          <h2 style={{ fontSize: "1.8rem" }}>We Travel Directly to Your Seller or Dealer</h2>
-          <p style={{ marginTop: "16px", fontSize: "1.05rem", lineHeight: 1.7, color: "var(--text-body)" }}>
-            Our mobile inspection team serves <strong>Kalyan East, Kalyan West, Dombivli East, Dombivli West, Diva, Kopar, Thakurli, Shahad, and Titwala</strong>.
-          </p>
+      {/* Reviews */}
+      <section className="section-space">
+        <div className="container">
+          <div className="section-heading">
+            <SectionLabel>Verified Buyer Reviews</SectionLabel>
+            <h2>Real Protection for Real Car Buyers</h2>
+          </div>
+          <ReviewSection reviews={verifiedReviews} />
         </div>
       </section>
 
-      <FaqSection />
-      <CorridorLinks currentSlug="car-inspection-kalyan-dombivli" />
+      {/* Corridor Links */}
+      <section className="section-band">
+        <div className="container">
+          <div className="section-heading">
+            <SectionLabel>Explore Other Inspection Corridors</SectionLabel>
+            <h2>Coverage Across Mumbai Western Line & Thane Belt</h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '18px' }}>
+            {corridorPages.filter(c => c.href !== "/car-inspection-kalyan-dombivli").map(c => (
+              <a key={c.href} href={c.href} className="feature-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <h4 style={{ fontSize: '1.1rem', color: 'var(--green-700)', marginBottom: '8px' }}>{c.title}</h4>
+                <p style={{ fontSize: '0.9rem', color: 'var(--text-body)', margin: 0 }}>{c.desc}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <footer className="site-footer">
+        <div className="container footer-bottom">
+          <p>© {new Date().getFullYear()} CheckMate PDI Exxpert. All rights reserved.</p>
+        </div>
+      </footer>
     </main>
   );
 }

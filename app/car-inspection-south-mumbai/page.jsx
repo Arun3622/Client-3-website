@@ -1,117 +1,158 @@
-import Link from "next/link";
+import Image from "next/image";
 import { SiteHeader } from "@/components/site-header";
 import { SectionLabel } from "@/components/section-label";
 import { Icon } from "@/components/icon";
-import { JsonLd } from "@/components/json-ld";
-import { FaqSection } from "@/components/faq-section";
-import { CorridorLinks } from "@/components/corridor-links";
-import { navigation, verifiedReviews } from "@/app/site-data";
+import { BrandMark } from "@/components/brand-mark";
+import { navigation, corridorPages, verifiedReviews } from "@/app/site-data";
+import { ReviewSection } from "@/components/review-section";
 
 export const metadata = {
-  title: "Car PDI Inspection South Mumbai | Churchgate to Dadar Pre-Purchase Checks | CheckMate PDI",
-  description: "Independent car PDI & pre-purchase inspection from Churchgate to Dadar & Lower Parel. 350+ point check for coastal wear, repaint & accident history. From ₹999.",
-  alternates: {
-    canonical: "https://checkmatepdi.com/car-inspection-south-mumbai"
-  }
+  title: "Car PDI Inspection South Mumbai | Pre-Delivery Checks Churchgate to Dadar | CheckMate PDI",
+  description: "Expert car PDI & pre-purchase inspection in South Mumbai (Churchgate, Marine Lines, Lower Parel, Dadar). 350+ point check & 15-min report. Starting ₹999."
 };
 
-const southMumbaiSchema = [
-  {
-    "@context": "https://schema.org",
-    "@type": "AutoRepair",
-    "@id": "https://checkmatepdi.com/car-inspection-south-mumbai#organization",
-    "name": "CheckMate PDI Exxpert - South Mumbai",
-    "url": "https://checkmatepdi.com/car-inspection-south-mumbai",
-    "telephone": "+917039935536",
-    "priceRange": "₹999 - ₹2999",
-    "description": "Independent car PDI and pre-purchase inspection across South Mumbai from Churchgate to Dadar and Mahim. 350+ point checklist with photo evidence.",
-    "areaServed": [
-      { "@type": "City", "name": "South Mumbai" },
-      { "@type": "AdministrativeArea", "name": "Churchgate" },
-      { "@type": "AdministrativeArea", "name": "Lower Parel" },
-      { "@type": "AdministrativeArea", "name": "Dadar" },
-      { "@type": "AdministrativeArea", "name": "Prabhadevi" }
-    ]
-  }
-];
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AutomotiveBusiness",
+  "name": "CheckMate PDI Exxpert - South Mumbai Corridor",
+  "url": "https://checkmatepdi.com/car-inspection-south-mumbai",
+  "telephone": "+917039935536",
+  "priceRange": "₹999 - ₹4999",
+  "description": "On-site car PDI & pre-purchase inspection across South Mumbai including Churchgate, Lower Parel, Prabhadevi, Dadar, and Mahim.",
+  "areaServed": [
+    "Churchgate", "Marine Lines", "Charni Road", "Grant Road", "Mumbai Central",
+    "Mahalaxmi", "Lower Parel", "Prabhadevi", "Dadar", "Mahim"
+  ]
+};
 
 export default function SouthMumbaiCorridorPage() {
+  const areas = [
+    "Churchgate", "Marine Lines", "Charni Road", "Grant Road", "Mumbai Central",
+    "Mahalaxmi", "Lower Parel", "Prabhadevi", "Dadar", "Mahim"
+  ];
+
   return (
     <main className="page-shell" id="top">
-      <JsonLd schemaData={southMumbaiSchema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <SiteHeader navigation={navigation} />
 
-      {/* Hero Section */}
-      <section className="hero-section" style={{ padding: "60px 0 40px" }}>
-        <div className="container">
-          <nav style={{ fontSize: "0.9rem", color: "var(--text-soft)", marginBottom: "20px" }}>
-            <Link href="/" style={{ color: "var(--green-700)", textDecoration: "none" }}>Home</Link> &gt; <span>South Mumbai Car Inspection</span>
-          </nav>
-          <div style={{ maxWidth: "800px" }}>
-            <div className="hero-price-pill" style={{ display: "inline-block", marginBottom: "16px" }}>
-              Starting at ₹999 • On-Site Inspection
-            </div>
-            <SectionLabel>South Mumbai Inspection Coverage</SectionLabel>
-            <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", lineHeight: 1.15, marginTop: "12px" }}>
-              Independent Car PDI & Pre-Purchase Inspection in South Mumbai
-            </h1>
-            <p className="hero-text" style={{ fontSize: "1.15rem", marginTop: "16px", lineHeight: 1.6 }}>
-              Whether you are buying a luxury SUV in Lower Parel or accepting delivery of a new sedan near Dadar, CheckMate PDI provides thorough, unbiased technical inspections on-site before you make final payments.
+      {/* Hero */}
+      <section className="hero-section">
+        <div className="container hero-grid">
+          <div className="hero-copy">
+            <div className="hero-price-pill">South Mumbai Car Inspection • Starts at ₹999</div>
+            <SectionLabel>South Mumbai PDI Coverage</SectionLabel>
+            <h1>Car PDI Inspection in South Mumbai — Know Before You Sign.</h1>
+            <p className="hero-text">
+              Buying a new or premium used car around Churchgate, Lower Parel, or Dadar? Our certified inspectors visit dealership stockyards and private sellers across South Mumbai to conduct a complete 350+ point pre-delivery inspection before you pay.
+            </p>
+            <p className="hero-text hero-text-extended">
+              Get an independent, photo-backed evidence report delivered to your phone in 15 minutes — giving you total confidence or real price negotiation power.
             </p>
 
-            <div className="hero-actions" style={{ marginTop: "28px" }}>
-              <a className="button button-solid shimmer-effect" href="https://wa.me/917039935536?text=Hi%2C%20I%20want%20to%20book%20a%20car%20PDI%20inspection%20in%20South%20Mumbai." target="_blank" rel="noopener noreferrer">
+            <div className="hero-badge-grid">
+              <div className="hero-badge-card">
+                <Icon className="button-icon" name="check" />
+                350+ checkpoints
+              </div>
+              <div className="hero-badge-card">
+                <Icon className="button-icon" name="rupee" />
+                Starts at ₹999
+              </div>
+            </div>
+
+            <div className="hero-actions">
+              <a className="button button-solid shimmer-effect" href="https://wa.me/917039935536?text=Hi%2C%20I%20want%20to%20book%20a%20PDI%20inspection%20in%20South%20Mumbai." target="_blank" rel="noopener noreferrer">
                 <Icon className="button-icon" name="chat" />
                 Book South Mumbai Inspection
               </a>
+              <a className="button button-outline" href="/">
+                View Main Site
+              </a>
+            </div>
+          </div>
+
+          <div className="hero-showcase" style={{ background: 'var(--surface-card)', padding: '32px', borderRadius: '28px', border: '1px solid var(--color-border)' }}>
+            <h3 style={{ fontSize: '1.4rem', marginBottom: '16px' }}>Areas Covered in South Mumbai</h3>
+            <p style={{ color: 'var(--text-body)', lineHeight: '1.6', marginBottom: '24px' }}>
+              We provide prompt, on-site PDI services at all major showroom yards and private seller locations across South Mumbai:
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px' }}>
+              {areas.map((area) => (
+                <div key={area} style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'var(--surface-soft)', padding: '10px 14px', borderRadius: '12px', fontSize: '0.92rem', fontWeight: 600 }}>
+                  <Icon name="check" style={{ color: 'var(--green-600)', flexShrink: 0 }} />
+                  <span>{area}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Localized Challenges Content */}
-      <section style={{ padding: "60px 0", background: "#fff" }}>
+      {/* Corridor Specific Reasons */}
+      <section className="section-space">
         <div className="container">
-          <SectionLabel>Why South Mumbai Buyers Need PDI</SectionLabel>
-          <h2 style={{ fontSize: "2rem", marginBottom: "24px" }}>
-            3 Critical Buying Risks Unique to South Mumbai Cars
-          </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
-            <div className="card" style={{ padding: "28px", borderRadius: "20px", background: "var(--surface-light)", border: "1.5px solid var(--color-border)" }}>
-              <h3 style={{ fontSize: "1.2rem", color: "var(--green-700)" }}>1. Coastal Salt Exposure & Corrosion</h3>
-              <p style={{ marginTop: "10px", color: "var(--text-body)", lineHeight: 1.6 }}>
-                Vehicles driven and parked near Marine Drive, Colaba, and Worli face constant salt-laden sea breezes. Our 350+ point check inspects underbody chassis rails, brake lines, and suspension joints for hidden salt rust and oxidation.
-              </p>
-            </div>
-            <div className="card" style={{ padding: "28px", borderRadius: "20px", background: "var(--surface-light)", border: "1.5px solid var(--color-border)" }}>
-              <h3 style={{ fontSize: "1.2rem", color: "var(--green-700)" }}>2. Tight Parking Scrapes & Touch-Up Putty</h3>
-              <p style={{ marginTop: "10px", color: "var(--text-body)", lineHeight: 1.6 }}>
-                Navigating tight lanes around Grant Road, Charni Road, and Girgaon leads to frequent minor side scrapes. Resale dealers often patch door panels with heavy body filler and quick repaints. We use precision paint thickness gauges to reveal hidden body repairs instantly.
-              </p>
-            </div>
-            <div className="card" style={{ padding: "28px", borderRadius: "20px", background: "var(--surface-light)", border: "1.5px solid var(--color-border)" }}>
-              <h3 style={{ fontSize: "1.2rem", color: "var(--green-700)" }}>3. Stockyard Handling & Demo Vehicle Fraud</h3>
-              <p style={{ marginTop: "10px", color: "var(--text-body)", lineHeight: 1.6 }}>
-                New cars delivered to buyers in Prabhadevi and Mahalaxmi are often stored in open dealer yards. Our certified inspectors verify glass etching dates, odometer readings, and VIN tags to ensure your new car hasn't been used as a test drive demo or damaged during transit.
-              </p>
-            </div>
+          <div className="section-heading">
+            <SectionLabel>Why South Mumbai Buyers Choose CheckMate</SectionLabel>
+            <h2>3 Key Reasons South Mumbai Car Buyers Need Independent PDI</h2>
+          </div>
+          <div className="feature-card-grid">
+            <article className="feature-card">
+              <div className="feature-card-icon"><Icon name="shield" /></div>
+              <h3>Dealership Stockyard & Transit Audits</h3>
+              <p>Showroom stockyards around Worli, Mahalaxmi, and Lower Parel often stack vehicles in tight spaces. We inspect for transit scrapes, bumper repairs, and repainted door panels before handover.</p>
+            </article>
+            <article className="feature-card">
+              <div className="feature-card-icon"><Icon name="shield" /></div>
+              <h3>Coastal Atmosphere Corrosion Checks</h3>
+              <p>Vehicles along Marine Drive and Nariman Point are exposed to salty sea air. We perform thorough underbody checks for early surface rust, brake disc pitting, and silencer wear.</p>
+            </article>
+            <article className="feature-card">
+              <div className="feature-card-icon"><Icon name="shield" /></div>
+              <h3>Luxury & Tech Variant Testing</h3>
+              <p>South Mumbai buyers frequently opt for top-tier variants. We test all electronic modules, panoramic sunroof drains, ADAS sensors, and infotainment features.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      {/* Areas Covered Prose */}
-      <section style={{ padding: "60px 0", background: "var(--surface-subtle)" }}>
-        <div className="container" style={{ maxWidth: "840px" }}>
-          <SectionLabel>South Mumbai Coverage Areas</SectionLabel>
-          <h2 style={{ fontSize: "1.8rem" }}>Areas We Serve Across South Mumbai</h2>
-          <p style={{ marginTop: "16px", fontSize: "1.05rem", lineHeight: 1.7, color: "var(--text-body)" }}>
-            Our field inspectors visit dealer showrooms, independent used car stockyards, and private seller locations daily. We cover the entire South Mumbai line starting from <strong>Churchgate, Marine Lines, Charni Road, Grant Road, and Mumbai Central</strong> down through <strong>Mahalaxmi, Lower Parel, Prabhadevi, Dadar, and Mahim</strong>.
-          </p>
+      {/* Reviews */}
+      <section className="section-space">
+        <div className="container">
+          <div className="section-heading">
+            <SectionLabel>Verified Buyer Reviews</SectionLabel>
+            <h2>See What Other Buyers Saved Before Handover</h2>
+          </div>
+          <ReviewSection reviews={verifiedReviews} />
         </div>
       </section>
 
-      <FaqSection />
-      <CorridorLinks currentSlug="car-inspection-south-mumbai" />
+      {/* Corridor Links */}
+      <section className="section-band">
+        <div className="container">
+          <div className="section-heading">
+            <SectionLabel>Explore Other Inspection Corridors</SectionLabel>
+            <h2>Coverage Across Mumbai Western Line & Thane Belt</h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '18px' }}>
+            {corridorPages.filter(c => c.href !== "/car-inspection-south-mumbai").map(c => (
+              <a key={c.href} href={c.href} className="feature-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <h4 style={{ fontSize: '1.1rem', color: 'var(--green-700)', marginBottom: '8px' }}>{c.title}</h4>
+                <p style={{ fontSize: '0.9rem', color: 'var(--text-body)', margin: 0 }}>{c.desc}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <footer className="site-footer">
+        <div className="container footer-bottom">
+          <p>© {new Date().getFullYear()} CheckMate PDI Exxpert. All rights reserved.</p>
+        </div>
+      </footer>
     </main>
   );
 }

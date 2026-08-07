@@ -1,11 +1,11 @@
 export const navigation = [
-  { label: "How It Works", href: "/#our-process" },
-  { label: "Proof", href: "/#proof" },
-  { label: "Coverage", href: "/#inspection-areas" },
-  { label: "Locations", href: "/#service-areas" },
-  { label: "FAQ", href: "/#faq" },
-  { label: "Reviews", href: "/#reviews" },
-  { label: "Contact", href: "/#contact" }
+  { label: "How It Works", href: "#our-process" },
+  { label: "Proof", href: "#proof" },
+  { label: "Coverage", href: "#inspection-areas" },
+  { label: "Reviews", href: "#reviews" },
+  { label: "Sample Report", href: "#sample-report" },
+  { label: "Why Buyers Trust Us", href: "#trust" },
+  { label: "Contact", href: "#contact" }
 ];
 
 export const heroHighlights = [
@@ -469,88 +469,40 @@ export const proofGallery = [
 ];
 
 export const verifiedReviews = [
-  { name: 'Rahul S.', carModel: 'Land Rover Defender', city: 'Mumbai', rating: 5, date: 'May 2026', problem: 'Engine lock broken.', saved: '₹35,000 negotiated off price', photos: ['/assets/proofs/proof-4.jpeg', '/assets/proofs/proof-1.jpeg'] },
-  { name: 'Vikram M.', carModel: 'Honda Elevate', city: 'Pune', rating: 5, date: 'September 2026', problem: 'Repair and repaint work found on a new car.', saved: 'Fixed the issue before delivery', photos: ['/assets/proofs/proof-7.jpeg'] },
-  { name: 'Neha K.', carModel: 'Urban Cruiser Hyryder', city: 'Navi Mumbai', rating: 5, date: 'April 2026', problem: 'Trunk was replaced and repainted.', saved: 'Replaced under warranty before delivery.', photos: ['/assets/proofs/proof-12.jpeg'] }
+  { name: 'Rahul S.', carModel: 'Land Rover Defender', city: 'Mumbai', rating: 5, date: 'May 2026', problem: 'Engine lock broken.', saved: 'Fixed the issue before delivery', photos: ['/assets/proofs/proof-4.jpeg', '/assets/proofs/proof-1.jpeg'] },
+  { name: 'Vikram M.', carModel: 'Honda Elevate', city: 'Pune', rating: 5, date: 'September 2026', problem: 'Repair and repaint work found on a new car.', saved: 'Rejected damaged unit & got a fresh car', photos: ['/assets/proofs/proof-7.jpeg'] },
+  { name: 'Neha K.', carModel: 'Urban Cruiser Hyryder', city: 'Navi Mumbai', rating: 5, date: 'April 2026', problem: 'Trunk was replaced and repainted.', saved: 'Received compensation before delivery', photos: ['/assets/proofs/proof-12.jpeg'] }
+];
+
+export const corridorPages = [
+  { title: "South Mumbai", href: "/car-inspection-south-mumbai", desc: "Churchgate to Dadar & Mahim" },
+  { title: "Bandra to Andheri", href: "/car-inspection-bandra-andheri", desc: "Bandra, Khar, Santacruz, Vile Parle, Andheri" },
+  { title: "Goregaon to Borivali", href: "/car-inspection-goregaon-borivali", desc: "Goregaon, Malad, Kandivali, Borivali" },
+  { title: "Mira Road to Virar", href: "/car-inspection-mira-virar", desc: "Mira Road, Bhayandar, Vasai, Virar" },
+  { title: "Thane Corridor", href: "/car-inspection-thane", desc: "Thane West, Ghodbunder Rd, Kalwa, Mumbra" },
+  { title: "Kalyan & Dombivli", href: "/car-inspection-kalyan-dombivli", desc: "Kalyan, Dombivli, Thakurli, Diva" }
 ];
 
 export const faqItems = [
   {
-    question: "What is a Car Pre-Delivery Inspection (PDI)?",
-    answer: "A Pre-Delivery Inspection (PDI) is a 350+ point technical evaluation performed on a car at the dealership or stockyard before registration and final payment. It verifies body paint thickness, electrical components, engine bay fluids, glass manufacturing dates, VIN match, and chassis integrity to ensure you do not receive a damaged, repainted, or demo vehicle."
+    q: "What is a Car PDI (Pre-Delivery Inspection)?",
+    a: "A Pre-Delivery Inspection (PDI) is a comprehensive 350+ point check performed on a new or used car before you make final payment or take delivery. Our certified inspectors verify panel alignment, paint thickness, engine health, electricals, odometer readings, and detect hidden transit or accident damage."
   },
   {
-    question: "How much does a PDI car inspection cost in Mumbai and Thane?",
-    answer: "Car PDI and pre-purchase inspections by CheckMate PDI Exxpert start at ₹999. Pricing is transparent with no hidden fees, providing full access to certified field inspectors and a 15-minute digital photo report."
+    q: "How much does a CheckMate PDI cost?",
+    a: "Our independent car PDI inspections start at ₹999. Every package includes a full 350+ point evaluation, high-resolution photo evidence of any issues found, and a decision-ready digital report delivered within 15 minutes of completion."
   },
   {
-    question: "Which areas in Mumbai, Thane, and Kalyan do you cover?",
-    answer: "CheckMate PDI covers the entire Mumbai Western Railway corridor (from Churchgate to Virar), Thane City (Kalwa, Mumbra, Ghodbunder Road), Navi Mumbai, and the Kalyan-Dombivli belt (Diva, Kopar, Dombivli, Thakurli, Kalyan)."
+    q: "Which areas in Mumbai and Thane do you cover?",
+    a: "We cover the entire Mumbai Western Railway corridor (Churchgate to Virar) and the Thane–Kalyan belt, including Thane, Kalwa, Mumbra, Diva, Dombivli, Thakurli, and Kalyan."
   },
   {
-    question: "How long does a car inspection take and when do I get the report?",
-    answer: "The physical on-site inspection takes approximately 45 to 60 minutes. Your complete digital photo report is delivered via WhatsApp and email within 15 minutes of inspection completion."
+    q: "How long does the inspection take and when do I get the report?",
+    a: "On-site inspection takes approximately 45 to 60 minutes. Your complete digital report with photo evidence is sent via WhatsApp and Email within 15 minutes after inspection."
   },
   {
-    question: "What is checked during a CheckMate PDI car inspection?",
-    answer: "Inspectors check over 350 parameters across 11 key categories: Exterior panel paint depth (detecting repaints/dents), glass manufacturing codes, tyre tread and date codes, interior electricals & AC performance, engine bay fluid integrity & wiring, structural chassis rails, OBD diagnostics, VIN verification, and photo documentation."
-  }
-];
-
-export const corridors = [
-  {
-    slug: "car-inspection-south-mumbai",
-    name: "South Mumbai",
-    tagline: "Churchgate to Dadar & Mahim",
-    href: "/car-inspection-south-mumbai",
-    areas: ["Churchgate", "Marine Lines", "Charni Road", "Grant Road", "Mumbai Central", "Mahalaxmi", "Lower Parel", "Prabhadevi", "Dadar", "Mahim"],
-    title: "Car PDI Inspection South Mumbai | Churchgate to Dadar Pre-Purchase Checks | CheckMate PDI",
-    description: "Independent car PDI & pre-purchase inspection from Churchgate to Dadar & Lower Parel. 350+ point check for coastal wear, repaint & accident history. From ₹999."
-  },
-  {
-    slug: "car-inspection-bandra-andheri",
-    name: "Bandra – Andheri",
-    tagline: "Bandra, Khar, Santacruz, Vile Parle & Andheri",
-    href: "/car-inspection-bandra-andheri",
-    areas: ["Bandra", "Khar", "Santacruz", "Vile Parle", "Andheri", "Jogeshwari"],
-    title: "Car PDI Inspection Bandra to Andheri | Independent Car Check | CheckMate PDI",
-    description: "Expert car PDI & pre-purchase check in Bandra, Khar, Santacruz, Vile Parle & Andheri. 350+ point checklist, photo evidence & 15-min digital report. Starts ₹999."
-  },
-  {
-    slug: "car-inspection-goregaon-borivali",
-    name: "Goregaon – Borivali",
-    tagline: "Goregaon, Malad, Kandivali & Borivali",
-    href: "/car-inspection-goregaon-borivali",
-    areas: ["Goregaon", "Malad", "Kandivali", "Borivali", "Dahisar"],
-    title: "Car PDI Inspection Goregaon to Borivali | Malad & Kandivali Car Check | CheckMate PDI",
-    description: "On-site car PDI & pre-purchase inspection in Goregaon, Malad, Kandivali & Borivali. Detailed 350+ point check before you pay token money. Starting at ₹999."
-  },
-  {
-    slug: "car-inspection-mira-virar",
-    name: "Mira Road – Virar",
-    tagline: "Mira Road, Bhayandar, Vasai & Virar",
-    href: "/car-inspection-mira-virar",
-    areas: ["Mira Road", "Bhayandar", "Naigaon", "Vasai Road", "Nallasopara", "Virar"],
-    title: "Car PDI Inspection Mira Road to Virar | Vasai & Bhayandar Car Check | CheckMate PDI",
-    description: "Car PDI & pre-purchase inspection in Mira Road, Bhayandar, Vasai & Virar. Certified inspectors check suspension, flood damage & mechanical wear. From ₹999."
-  },
-  {
-    slug: "car-inspection-thane",
-    name: "Thane Corridor (Core Area)",
-    tagline: "Thane, Kalwa & Mumbra",
-    href: "/car-inspection-thane",
-    areas: ["Thane West", "Thane East", "Ghodbunder Road", "Majiwada", "Vartak Nagar", "Pokhran Road", "Kalwa", "Mumbra"],
-    title: "Car PDI Inspection Thane, Kalwa & Mumbra | 350+ Point Car Check | CheckMate PDI",
-    description: "Thane's trusted independent car PDI & pre-purchase inspection. Comprehensive 350+ point check on showroom & used cars in Thane, Kalwa & Mumbra. From ₹999."
-  },
-  {
-    slug: "car-inspection-kalyan-dombivli",
-    name: "Kalyan – Dombivli",
-    tagline: "Diva, Dombivli, Thakurli & Kalyan",
-    href: "/car-inspection-kalyan-dombivli",
-    areas: ["Diva", "Kopar", "Dombivli", "Thakurli", "Kalyan East", "Kalyan West"],
-    title: "Car PDI Inspection Kalyan & Dombivli | Pre-Delivery Check | CheckMate PDI",
-    description: "Independent car PDI & pre-purchase inspection in Kalyan, Dombivli, Diva & Thakurli. Uncover hidden accident damage & waterlogging before buying. Starts ₹999."
+    q: "What points are checked during the PDI?",
+    a: "We check 11 key categories: Buyer Details, Vehicle Identity (VIN & Odometer), Exterior Paint & Body Alignment, Glass & Windshields, Tyre Tread & Manufacturing Dates, Interior Cabin & Controls, Engine Bay Fluids & Battery, Electrical System, Underbody Check, Photo Evidence, and Final Condition Rating."
   }
 ];
 
